@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    search_demo:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        ports:
+          # <Port for hosts> : < Port for containers>
+            - '5000:5000'
+        expose:
+          # Opens port 1433 on the container
+          - '5000'
+        command: "python3 run.py"
